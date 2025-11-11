@@ -1,0 +1,127 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #f0f0f0;
+
+    --primary-bg-collor: #111217;
+    --secondary-bg-color: #28292E;
+    --border-color: #28292E;
+    
+    --title-color: #f0f0f0;
+    --link-color: #9a9a9c;
+    --icon-color: #C7c8c9;
+    --text-color: #C7c8c9;
+}
+
+body {
+    background-color: var(--primary-bg-collor);
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    font-size: 3rem;
+    color: var(--icon-color);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+.header__toggle{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__brand .brand__logo {
+    height: 3.25rem;
+    width: 3.25rem;
+}
+
+#toggleTheme {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-bg-collor);
+}
+
+.menu__item {
+    width: 100%;
+}
+
+.menu-mobile {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+}
+
+.menu-mobile .menu__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.menu__icon, .menu__text{
+    color: var(--text-color)
+}
+
+.menu__link.active .menu__icon, 
+.menu__link.active .menu__text{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.menu__icon {
+    font-size: 1.5rem;
+}
+
+.menu__text {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+.menu-principal {
+    gap: 1rem;
+}
+
+.header__nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header {
+        background-color: var(--primary-bg-collor);
+        width: 100vw;
+        position: fixed;
+        padding: 1rem 4rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav--mobile{
+        display: none;
+    }
+
+    .header__nav{
+        display: flex;
+    }
+
+    .header__nav,
+    .header__toggle{
+        min-width: 30%;
+    }
+}
