@@ -1,0 +1,183 @@
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Diretorio Raiz */
+:root, :root[data-theme="dark"] {
+  --primary-color: #F0F0F0;
+
+  --primary-bg-color: #111217;
+  --secondary-bg-color: #28292E;
+  --primary-border-color: #28292E;
+	--secondary-border-color: #56575A;
+
+  --title-color: #F0F0F0;
+  --text-color: #9A9A9C;
+  --link-color: #9A9A9C;
+  --icon-color: #C7C8C9;
+}
+
+:root[data-theme='light'] {
+  --primary-color: #0B0B0F;
+
+	--primary-bg-color: #E9E9E9;
+	--secondary-bg-color: #C7C8C9;
+	--primary-border-color: #C7C8C9;
+	--secondary-border-color: #8e8eb8;
+
+	--title-color: #0B0B0F;
+	--text-color: #28292E;
+	--link-color: #28292E;
+	--icon-color: #56575A;
+}
+
+/* Tema (Theme) */
+html[data-theme="light"] .brand__logo {
+	filter: invert(1)
+}
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	vertical-align: baseline;
+	list-style: none;
+	text-decoration: none;
+}
+
+/* Geral */
+body {
+	background-color: var(--primary-bg-color);
+	font-family:'Inter', Tahoma, Verdana, sans-serif;	
+}
+
+i {
+	color: var(--icon-color);
+}
+
+/* Cabeçalho (Header) */
+.header {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: .5rem 1rem;
+}
+
+.header__toggle {
+	display: flex;
+	justify-content: flex-end;	
+}
+
+.header__brand .brand__logo {
+	width: 3.25rem;
+	height: 3.25rem;
+}
+
+#toggleTheme{
+	font-size: 1.5rem;
+	color: var(--primary-color);
+	cursor: pointer;
+	transition: all .6s ease-in-out;
+}
+
+/* Navegação (Nav) */
+.menu {
+	display: flex;
+	align-items: center;
+	background-color: var(--primary-bg-color);
+}
+
+.menu__item {
+	width: 100%;
+}
+
+.menu-mobile {
+	width: 100vw;
+	position: fixed;
+	bottom: 0;
+	justify-content: space-between;
+	border-top: 1px solid var(--primary-border-color);
+}
+
+.menu-mobile .menu__link {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: .5rem;
+}
+
+.menu__link.active .menu__icon, 
+.menu__link.active .menu__text,
+.menu__link:hover .menu__icon, 
+.menu__link:hover .menu__text {
+	color: var(--primary-color);
+	font-weight: 600;
+}
+
+.menu__icon, .menu__text {
+	color: var(--text-color);
+}
+
+.menu__icon {
+	font-size: 1.5rem;
+}
+
+.menu__text {
+	font-size: .75rem;
+	text-transform: uppercase;
+}
+
+.header__nav{
+	display: none;
+}
+
+/* Rodapé (footer) */
+footer {
+	padding-top: 10rem ;
+	margin-bottom: 5rem;
+}
+
+footer p, footer a{
+	font-size: .875rem;
+	text-align: center;
+	color: var(--text-color);
+}
+
+/* Responsividade */
+@media (min-width: 768px){
+	.header {
+		position: fixed;
+		border-bottom: 1px solid var(--primary-border-color);
+		padding: 1rem 6rem;
+		background-color: var(--primary-bg-color);
+	}
+
+	.nav-mobile{
+		display: none;
+	}
+	.header__nav {
+		display: flex;
+	}
+
+	.header__nav,
+	.header__toggle{
+		min-width: 30%;
+	}
+
+	.menu__link {
+		padding: .5rem;
+	}
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+	.header{
+	padding: 1rem 4rem;
+	}
+}

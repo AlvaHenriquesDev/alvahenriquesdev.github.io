@@ -1,5 +1,5 @@
-const toggleTheme = document.getElementById('toggleTheme')
 const rootHtml = document.documentElement
+const toggleTheme = document.getElementById('toggleTheme')
 
 function changeTheme(){
     const currentTheme = rootHtml.getAttribute("data-theme")
